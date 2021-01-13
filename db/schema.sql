@@ -7,7 +7,9 @@ DROP TABLE IF EXISTS burgers;
 
 CREATE TABLE IF NOT EXISTS burgers
 (
-    ID INT PRIMARY KEY auto_increment,
+    ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     burger_name VARCHAR(50) NOT NULL,
+    createdAt TIMESTAMP NOT NULL,
     devoured Boolean
 )
+
