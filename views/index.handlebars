@@ -11,3 +11,26 @@
 
 <div>
   <h3>Available Burgers:</h3>
+    {{#each burgers}}
+      {{#if this.devoured}}
+      {{else}}
+      <form action="/devour" method="POST">
+        <label>{{this.burger_name}}</label>
+        <input type="hidden" name="ID" value="{{this.ID}}">
+        <input type="hidden" name="burger_name" value="{{this.burger_name}}">
+        <button>Devour</button>
+      </form>
+      {{/if}}
+    {{/each}}
+</div>
+
+<div id="devouredBurgers" style="float:right;">
+  <h3 >Devoured Burgers:</h3>
+  <ul>
+    {{#each burgers}}
+      {{#if this.devoured}}
+      <li>{{this.burger_name}}</li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</div>
